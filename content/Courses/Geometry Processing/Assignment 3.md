@@ -5,6 +5,8 @@ tags:
 ---
 
 
+
+
 *Note*: I skipped the math as the [assignment](https://github.com/alecjacobson/geometry-processing-registration) already well explained the internals. My implementation is uploaded [here](https://github.com/alecjacobson/geometry-processing-registration)
 ## Problem of registration 
 
@@ -63,8 +65,9 @@ To address the above problems ICP proposes:
 
 The iterative form of ICP can be rewritten for step $t$ as :
 
-$$\begin{align}
-R_{t+1}^*, t_{t+1} ^* &= \underset{R \in SO_{3}, \; t \in \mathbb{R}^3}{\arg\min}  \; \sum_{\mathbf{x} \in X} \bigg|\bigg| R\mathbf{z}_{t} + t - P_{Y}(\mathbf{R\mathbf{z}_{t} + t}) \bigg|\bigg|^2 \\
+$$
+\begin{align}
+R_{t+1}^*, t_{t+1} ^* &= \underset{R \in SO_{3}, \; t \in \mathbb{R}^3}{\arg\min}  \; \sum_{\mathbf{x} \in X} \bigg|\bigg| R\mathbf{z}_{t} + t - P_{Y}(\mathbf{R\mathbf{z}_{t} + t}) \bigg|\bigg|^2
 \end{align}
 $$
 
@@ -77,7 +80,8 @@ $$
 
 Point-point matching is generated and could be used for the case when $Y$ is also a point cloud (with no normal information). In case of point-point matching the assumption is that the projection of $\mathbf{z}_{t+1}$ and $\mathbf{z}_{t}$ is same. 
 
-$$\begin{align}
+$$
+\begin{align}
 R_{t+1}^*, t_{t+1} ^* &= \underset{R \in SO_{3}, \; t \in \mathbb{R}^3}{\arg\min}  \; \sum_{\mathbf{x} \in X} \bigg|\bigg| R\mathbf{z}_{t} + t - P_{Y}(\mathbf{z_{t}}) \bigg|\bigg|^2
 \end{align}
 $$
@@ -94,7 +98,8 @@ $$
 
 The optimization problem in this case is: 
 
-$$\begin{align}
+$$
+\begin{align}
 R_{t+1}^*, t_{t+1} ^* &= \underset{R \in SO_{3}, \; t \in \mathbb{R}^3}{\arg\min}  \; \sum_{\mathbf{x} \in X} \bigg|\bigg| \bigg \langle Z_{t+1} - P_{Y}(Z_{t}), \; \hat{n}_{P_{Y}(Z_{t})}  \bigg  \rangle \; \hat{n}_{P_{Y}(Z_{t})}\bigg|\bigg|^2
 \end{align}
 $$
@@ -106,7 +111,8 @@ $$
 At first glance I found ICP to be some wizardry. Although the optimisation problem in point-point ICP is the infamous least squares with fixed target (the usual case in supervised machine learning) at each optimisation step ICP finds new set of closest points $P_{Y}(z_{t})$ and optimize $R, t$ for these new projections.  To clarify this ICP lets put down the algorithm for ICP from 
 
  
-$$\begin{align*}\\ 
+$$
+\begin{align*}\\ 
 &\textbf{Algorithm: } \text{Iterative Closest Point}\\ 
 &\textbf{Input: } \text{X, Y}\\ 
 &\textbf{Output: } \text{R, t}\\
@@ -119,7 +125,8 @@ $$\begin{align*}\\
 & \quad \quad \mathbf{R}_{t},  \mathbf{t}_{t} \leftarrow \text{ Step - 2  : Minimize } \bigg|\bigg| R\mathbf{Z}_{t-1} + t - P_{Y}(\mathbf{Z_{t-1}}) \bigg|\bigg|^2\\
 & \quad \quad Z_{t} = R_{t}Z_{t-1} + t_{t}\\
 
-\end{align*}$$
+\end{align*}
+$$
 
 
 
