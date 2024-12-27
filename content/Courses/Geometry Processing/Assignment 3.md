@@ -7,7 +7,7 @@ tags:
 
 
 
-*Note*: I skipped the math as the [assignment](https://github.com/alecjacobson/geometry-processing-registration) already well explained the internals. My implementation is uploaded [here](https://github.com/alecjacobson/geometry-processing-registration)
+*Note*: I skipped the math as the [assignment](https://github.com/alecjacobson/geometry-processing-registration) already well explained the internals. My implementation is uploaded [here](https://github.com/pavanteja295/geometry-processing-csc2520-solutions/tree/main/geometry-processing-registration)
 ## Problem of registration 
 
 Given two sets of points   $X, Y \subset  \mathbb{R}^3$ namely source and target respectively the problem of registration aims to find a transformation function $T: \mathbb{R}^3 \to \mathbb{R}^3$ such that  the two sets of points $T(X) = \{ T(x) |  x  \in X \}$ and $Y$ are *indistinguishable* as per some *defined*  distance measures $d$.
