@@ -64,7 +64,7 @@ To address the above problems ICP proposes:
 The iterative form of ICP can be rewritten for step $t$ as :
 
 $$\begin{align}
-R_{t+1}^*, t_{t+1} ^* &= \underset{R \in SO_{3}, \; t \in \mathbb{R}^3}{\arg\min}  \; \sum_{\mathbf{x} \in X} \bigg|\bigg| R\mathbf{z}_{t} + t - P_{Y}(\mathbf{R\mathbf{z}_{t} + t}) \bigg|\bigg|^2
+R_{t+1}^*, t_{t+1} ^* &= \underset{R \in SO_{3}, \; t \in \mathbb{R}^3}{\arg\min}  \; \sum_{\mathbf{x} \in X} \bigg|\bigg| R\mathbf{z}_{t} + t - P_{Y}(\mathbf{R\mathbf{z}_{t} + t}) \bigg|\bigg|^2 \\
 \end{align}
 $$
 
