@@ -20,29 +20,36 @@ $$
 1. Below I state a simple proposition that sheds some light on why Laplacian is useful for the smoothing problem. Informally,  Laplacian captures deviations of the function value from local neighbourhood averages
 
 > [!proposition]+ Laplacian capture deviations from local Average : Let $f:\mathbb{R} \to \mathbb{R}$ be twice differentiable function at $x$, $f \in C^2$ ,  then 
-> $$\begin{align}
+> $$
+> \begin{align}
 \Delta f(x) &= 
 > \lim_{R\to 0 } \; \frac{2}{A_{n-1} R^{n + {1}}}\int_{\bar{{x}} \in S_{R}(x)} f(\bar{x}) - f(x)  \\
  &= \bar{f}_{S_{R}}(x) - \lim_{R \to 0 } \frac{2}{R^2} f(x)\\
-> \end{align}$$
+> \end{align}
+> $$
 > where $S_{R}(x) = \{ \bar{x } \in R : || \bar{{x}} - x|| =R \}$ denotes the outer shell of a $R$-ball around $x$ , $A_{n-1}$ denotes the  hypervolume of the unit sphere. 
 
 
 `\begin{proof}`
 1. Consider the Taylor series approximation of $f$  at $x$, then for $\bar{x} \in S_{R}(x)$ we have :
 
-$$f(\bar{x}) = f(x) + (x - \bar{x})f^{\prime}(x) + \frac{(x - \bar{x})^2f^{\prime\prime}(x)}{2} + o(||x-x||^3)$$
+$$
+f(\bar{x}) = f(x) + (x - \bar{x})f^{\prime}(x) + \frac{(x - \bar{x})^2f^{\prime\prime}(x)}{2} + o(||x-x||^3)
+$$
 2. Taking the integral over $S_{R}(x)$ the middle term vanishes (points on either side of the diameter cancel each other) . Then we have 
-$$\begin{align}
+$$
+\begin{align}
 \int_{\bar{{x}} \in S_{R}(x)} f(\bar{x}) &=  \int_{\bar{{x}} \in S_{R}(x)} \frac{(x - \bar{x})^2f^{\prime\prime}(x)}{2} +  o(||x-x||^3) \\
 \int_{\bar{{x}} \in S_{R}(x)} f(\bar{x}) -  f(x) &= + \int_{\bar{{x}} \in S_{R}(x)} \frac{(x - \bar{x})^2f^{\prime\prime}(x)}{2} +  o(||x-x||^3) \\ \\
 \int_{\bar{{x}} \in S_{R}(x)} f(\bar{x}) -  f(x) &= + \int_{\bar{{x}} \in S_{R}(x)} \frac{R^2f^{\prime\prime}(x)}{2} +  o(||x-x||^3) \\ \\
 \int_{\bar{{x}} \in S_{R}(x)} f(\bar{x}) -  f(x) &= A_{n-1} R^{n-1} \frac{R^2f^{\prime\prime}(x)}{2} +  o(R^3) \\ \\
 \frac{2}{A_{n-1} R^{n + {1}}} \int_{\bar{{x}} \in S_{R}(x)} f(\bar{x}) -  f(x)  + o(R^3)&= f^{\prime\prime}(x)  \\
-
-\end{align}$$
+\end{align}
+$$
 3. Applying the limit $R \to 0$ yields the result in the proposition. 
-$$\boxed{\Delta f = f^{\prime\prime}(x) = \lim_{R \to 0  } \;  \frac{2}{A_{n-1} R^{n + {1}}} \int_{\bar{{x}} \in S_{R}(x)} f(\bar{x}) -  f(x)  + \underbrace{  o(R^3)}_{\to 0} }$$
+$$
+\boxed{\Delta f = f^{\prime\prime}(x) = \lim_{R \to 0  } \;  \frac{2}{A_{n-1} R^{n + {1}}} \int_{\bar{{x}} \in S_{R}(x)} f(\bar{x}) -  f(x)  + \underbrace{  o(R^3)}_{\to 0} }
+$$
 4. Hence, this proves Laplacian capture the  deviations of a function  value from the local average of the shell.  The result needs to be extended to the case of multi variate functions but the spirit should remain the same.
 5. The function $f$ in addition to being twice differentiable should also be Lesbegue integrable. 
 `\end{proof}`
@@ -60,7 +67,6 @@ where $\lambda$ controls the rate of smoothening.  If we write the above update 
 
 $$
 \boxed{\frac{\partial f}{\partial t} = \lambda \Delta f}
-
 $$
 ^05ce41
 
@@ -116,9 +122,7 @@ $$
 $$
 	2. **Weak solution** : If $f^*_{w}$ is a weak solution then it requires that the $f_{w}^*$ must hold the following weak implied constraints with some test functions $v_{i} \in V$  where $V$ is a function space of choice.
 $$
-
 \forall v_{i} \in V \quad  \int_{x \in \Omega} \quad \frac{\partial f^*}{\partial t}(x) v_{i} = \int_{x \in \Omega} \lambda \Delta f(x)v_{i} 
-
 $$
 
 ^weaksolutionheat
@@ -131,7 +135,6 @@ $$
 &= -\int_{x \in \Omega} \lambda \nabla  f(x) \nabla v_{i} + \cancel{\oint_{\partial \Omega} \langle{\nabla f} , \;  n \rangle\; v_{i} }_{=0} \\ \\
 &= -\int_{x \in \Omega} \lambda \nabla  f(x) \nabla v_{i} 
 \end{align}
- 
 $$
 ^weakformheat
 
@@ -159,13 +162,10 @@ The boundary integral is zero for closed meshes and if the mesh is not closed we
 4. Usually, considering the mesh vertices  as $n$ control points $V$ could be defined as piece-wise linear functions using the control points as $v \in V$
 
 $$
-
 v(x) = \sum^n_{j=1} u_{j} \phi_{j}(x) 
-
 $$
   with $\phi_{j}$ defined as:
 $$
-
 \phi_{j}(x) = \begin{cases} \\
 1 \quad \text{if} \quad x \in \text{Mesh vertices} \\
 \frac{A_{x}}{A} \quad \text{if} \quad x \in \Delta_{j}  \\ \\
@@ -191,27 +191,22 @@ $$
 Similarly, the left hand term can be reduced to : 
 
 $$
-
 \begin{align}
 \int_{x \in \Omega} \quad \frac{\partial f}{\partial t} v_{i} &= \int_{x \in \Omega} \quad \frac{\partial }{\partial t}\bigg( \sum^n_{j=1} f_{j} \phi_{j} \bigg ) \phi_{i}  \\
 &= \int_{x \in \Omega} \quad \sum^n_{j=1} \frac{\partial f_{j} }{\partial t}  \bigg( \phi_{j}  \phi_{i} \bigg) \\
 &=  \quad \sum^n_{j=1} \frac{\partial f_{j} }{\partial t}  \underbrace{\bigg( \int_{x \in \Omega}\phi_{j}  \phi_{i} \bigg)}_{M_{ij}}\\ \\
 &=  \quad \sum^n_{j=1} \frac{\partial f_{j} }{\partial t}  {M_{ij}}\\
 \end{align}
-
-
 $$
 
  $M$ is defined to be *mass* matrix.  Both $M$ and $L$ could be precomputed given the mesh geometry and is independent on the function $f \in V$.  This converts the infinite dimensional weak formulation to finite dimensional formulation as 
 
 $$
-
 \begin{align}
 \forall v_{i} \in \{ v_{1} , v_{2} , \ldots , v_{n} \}\qquad\qquad & \sum^n_{j=1} \frac{\partial f_{j} }{\partial t}  {M_{ij}} =  \lambda \sum^n_{j=1}f_{j}L_{ij} \\  \\
 &M \frac{\partial f }{\partial t}  = -\lambda L f \\ \\
 &\boxed{\frac{\partial f }{\partial t}  = -\lambda M^{-1}L f }\\ \\
 \end{align}
-
 $$
 ^finalupdaterule
 
@@ -228,7 +223,6 @@ $$
 f_{t+1} &= f_{t} +  \frac{\partial f_{t} }{\partial t}  \\
 &= f_{t } - \lambda  M^{-1}L f_{t}  \\
 \end{align}
-
 $$
 
 
@@ -244,9 +238,7 @@ f_{t+1} - f_{t} = -\lambda M^{-1}Lf_{t+1} \\
 \end{align}
 $$
 $$
-
 \boxed{f_{t} = (Id   + \lambda M^{-1}L) f_{t+1}}
-
 $$
 
 > [!todo|green] Implicit vs Explicit methods
