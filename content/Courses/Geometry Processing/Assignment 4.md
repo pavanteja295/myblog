@@ -23,8 +23,7 @@ $$
 
 ----
 
-![[Screenshot 2025-01-27 at 4.29.50 AM.png]]
-
+![[public/static/prep1.png]]
 ***Proof***
 1. Consider the Taylor series approximation of $f$  at $x$, then for $\bar{x} \in S_{R}(x)$ we have :
 
