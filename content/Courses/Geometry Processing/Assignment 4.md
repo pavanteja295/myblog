@@ -3,7 +3,7 @@ title: Smoothing by Laplacian
 draft: false
 tags:
 ---
-
+****
 Checkout this [link](https://github.com/pavanteja295/geometry-processing-csc2520-solutions/tree/main/geometry-processing-smoothing) for implementation of [assignment 4 ](https://github.com/alecjacobson/geometry-processing-smoothing).  I felt the smoothing formulation in the assignment is a bit confusing fiddling between  the functional form  (energy term) as well as the weak formulation. In this notes I tried to stick to a single view and derived the final update rules.
 
 ## Function smoothing on surfaces
@@ -23,7 +23,7 @@ $$
 
 ----
 
-![[public/static/prep1.png]]
+![[/public/static/prep1.png]]
 ***Proof***
 1. Consider the Taylor series approximation of $f$  at $x$, then for $\bar{x} \in S_{R}(x)$ we have :
 
