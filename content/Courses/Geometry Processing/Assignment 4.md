@@ -4,7 +4,8 @@ draft: false
 tags:
 ---
 
-Checkout this [link](https://github.com/pavanteja295/geometry-processing-csc2520-solutions/tree/main/geometry-processing-smoothing) for implementation of [assignment 4 ](https://github.com/alecjacobson/geometry-processing-smoothing)
+Checkout this [link](https://github.com/pavanteja295/geometry-processing-csc2520-solutions/tree/main/geometry-processing-smoothing) for implementation of [assignment 4 ](https://github.com/alecjacobson/geometry-processing-smoothing).  I felt the smoothing formulation in the assignment is a bit confusing fiddling between  the functional form  (energy term) as well as the weak formulation. In this notes I tried to stick to a single view and derived the final update rules.
+
 ## Function smoothing on surfaces
 
 1.  Informally, given a scalar function $f:\Omega \to \mathbb{R}$ over some surface $\Omega$ that is *noisy* (that is the function $f$ *fluctuates* quite a bit around the neighbourhood of any point $x \in \Omega$) we would like to find another function $u^{\prime}$  that is close approximation to $u$  but less *noisy* (that is the the function $u^{\prime}$ at some $x\in \Omega$ deviates less from  neighbhourhood average) . 
@@ -28,6 +29,7 @@ $$
 > \end{align}
 > $$
 > where $S_{R}(x) = \{ \bar{x } \in R : || \bar{{x}} - x|| =R \}$ denotes the outer shell of a $R$-ball around $x$ , $A_{n-1}$ denotes the  hypervolume of the unit sphere. 
+
 
 
 `\begin{proof}`
