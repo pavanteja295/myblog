@@ -20,19 +20,12 @@ $$
 $$
 1. Below I state a simple proposition that sheds some light on why Laplacian is useful for the smoothing problem. Informally,  Laplacian captures deviations of the function value from local neighbourhood averages
 
-> [!proposition]+ Laplacian capture deviations from local Average : Let $f:\mathbb{R} \to \mathbb{R}$ be twice differentiable function at $x$, $f \in C^2$ ,  then 
-> $$
-> \begin{align}
-\Delta f(x) &= 
-> \lim_{R\to 0 } \; \frac{2}{A_{n-1} R^{n + {1}}}\int_{\bar{{x}} \in S_{R}(x)} f(\bar{x}) - f(x)  \\
- &= \bar{f}_{S_{R}}(x) - \lim_{R \to 0 } \frac{2}{R^2} f(x)\\
-> \end{align}
-> $$
-> where $S_{R}(x) = \{ \bar{x } \in R : || \bar{{x}} - x|| =R \}$ denotes the outer shell of a $R$-ball around $x$ , $A_{n-1}$ denotes the  hypervolume of the unit sphere. 
 
+----
 
+![[Screenshot 2025-01-27 at 4.29.50 AM.png]]
 
-`\begin{proof}`
+***Proof***
 1. Consider the Taylor series approximation of $f$  at $x$, then for $\bar{x} \in S_{R}(x)$ we have :
 
 $$
@@ -54,7 +47,7 @@ $$
 $$
 4. Hence, this proves Laplacian capture the  deviations of a function  value from the local average of the shell.  The result needs to be extended to the case of multi variate functions but the spirit should remain the same.
 5. The function $f$ in addition to being twice differentiable should also be Lesbegue integrable. 
-`\end{proof}`
+
 ---
 
 3. Note that Laplacian operator is defined on functions over the Euclidean spaces. For Laplacian operator for functions on surfaces check out  Laplace-Beltrami operator [link](https://en.wikipedia.org/wiki/Laplace%E2%80%93Beltrami_operator)  . For this assignment we don't even use the Laplacian operator we only use the gradients of the defined step function on the mesh by exploiting the weak formulation.
@@ -248,3 +241,18 @@ $$
 > - [ ]  When is one ideal than other
 > - [ ] Concrete example for showing the difference between implicit vs explicit method 
 
+
+
+
+
+
+
+> [!proposition]+ Laplacian capture deviations from local Average : Let $f:\mathbb{R} \to \mathbb{R}$ be twice differentiable function at $x$, $f \in C^2$ ,  then 
+> $$
+> \begin{align}
+\Delta f(x) &= 
+> \lim_{R\to 0 } \; \frac{2}{A_{n-1} R^{n + {1}}}\int_{\bar{{x}} \in S_{R}(x)} f(\bar{x}) - f(x)  \\
+ &= \bar{f}_{S_{R}}(x) - \lim_{R \to 0 } \frac{2}{R^2} f(x)\\
+> \end{align}
+> $$
+> where $S_{R}(x) = \{ \bar{x } \in R : || \bar{{x}} - x|| =R \}$ denotes the outer shell of a $R$-ball around $x$ , $A_{n-1}$ denotes the  hypervolume of the unit sphere. 
