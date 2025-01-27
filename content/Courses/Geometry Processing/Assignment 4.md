@@ -23,11 +23,11 @@ $$
 
 ----
 
-![[./prep1.png]]
+![[./prep1.png|2500]]
 ![[content/Courses/Geometry Processing/prep1.png]]
 
-![[public/static/prep1.png]]
-![[../../../public/static/prep1.png]]
+![[public/static/prep1.png|2500]]
+![[../../../public/static/prep1.png|2500]]
 
 ***Proof***
 1. Consider the Taylor series approximation of $f$  at $x$, then for $\bar{x} \in S_{R}(x)$ we have :
