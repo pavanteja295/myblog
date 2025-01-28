@@ -249,7 +249,7 @@ $$
 
 
 
-
+%%
 
 > [!proposition]+ Laplacian capture deviations from local Average : Let $f:\mathbb{R} \to \mathbb{R}$ be twice differentiable function at $x$, $f \in C^2$ ,  then 
 > $$
@@ -260,3 +260,5 @@ $$
 > \end{align}
 > $$
 > where $S_{R}(x) = \{ \bar{x } \in R : || \bar{{x}} - x|| =R \}$ denotes the outer shell of a $R$-ball around $x$ , $A_{n-1}$ denotes the  hypervolume of the unit sphere. 
+
+%%
